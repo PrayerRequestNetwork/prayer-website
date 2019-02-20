@@ -6,15 +6,18 @@
     "jest": true,
     "es6": true
   },
-  "globals": {
-    "err": true,
-    "req": true,
-    "res": true,
-    "next": true
-  },
-  "extends": "eslint:recommended",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "module": true,
+      "jsx": true
+    }
   },
   "rules": {
     "no-console": "off",
