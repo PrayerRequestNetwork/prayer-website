@@ -10,6 +10,7 @@
     "eslint:recommended",
     "plugin:react/recommended"
   ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 6,
@@ -20,16 +21,32 @@
     }
   },
   "rules": {
-    "no-console": "off",
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "no-console": 1,
     "indent": [
       "error",
-      2
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "react/prop-types": [
+      0
     ],
     "quotes": [
       "error",
       "single",
       {
         "allowTemplateLiterals": true
+      }
+    ],
+    "space-infix-ops": [
+      "error",
+      {
+        "int32Hint": false
       }
     ],
     "comma-dangle": [
@@ -39,6 +56,9 @@
     "semi": [
       "error",
       "always"
+    ],
+    "plugins": [
+      "react"
     ]
   }
 }

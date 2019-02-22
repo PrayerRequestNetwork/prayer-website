@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // Components
-import Form from './components/form';
+import Form from './components/form/form';
 
 import logo from './logo.svg';
 import './App.css';
