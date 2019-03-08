@@ -10,10 +10,10 @@ import './App.css';
 
 class App extends Component {
 
-  handleOnSubmit = async props => {
+  handleOnSubmit = async formInfo => {
+    const {prayerRequestMessage} = formInfo;
     const prs = new PrayerRequestService();
-    const accountRoles = await prs.getAccountRoles();
-    console.log({accountRoles});
+    prs.postPrayerRequest({prayerBody: prayerRequestMessage});
   }
 
   render() {

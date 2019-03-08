@@ -4,7 +4,7 @@ import './form.scss';
 
 export default class Form extends Component {
   state = {
-    prayerRequestField: '',
+    prayerRequestMessage: '',
   }
   handleOnChange = e => {
     this.setState(Object.assign({}, this.state, {[e.target.name]: e.target.value}));
@@ -16,8 +16,8 @@ export default class Form extends Component {
   render() {
     return(
       <form onSubmit={this.handleOnSubmit}>
-        <label htmlFor="prayerRequestField">Prayer Request</label>
-        <input onChange={this.handleOnChange} name="prayerRequestField" placeholder="Prayer Request"/>
+        <label htmlFor="prayerRequestMessage">Prayer Request</label>
+        <input onChange={this.handleOnChange} name="prayerRequestMessage" placeholder="Prayer Request"/>
       </form>
     );
   }
