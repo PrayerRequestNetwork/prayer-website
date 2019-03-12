@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import PrayerRequestService from './services/prayerRequestService';
 
 // Components
-import Form from './components/form/form';
+import Form from './components/forms/homepageForm/HomepageForm';
 
 import './App.css';
 
@@ -12,6 +12,7 @@ class App extends Component {
 
   handleOnSubmit = async formInfo => {
     const {prayerRequestMessage} = formInfo;
+    console.log({prayerRequestMessage});
     const prs = new PrayerRequestService();
     prs.postPrayerRequest({prayerBody: prayerRequestMessage});
   }
