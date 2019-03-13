@@ -1,6 +1,7 @@
 import superagent from 'superagent';
 
 export default class PrayerRequestService {
+
   getAccountRoles = async () => {
     return await this.request({
       method: 'PUT',
@@ -8,6 +9,13 @@ export default class PrayerRequestService {
     });
   }
 
+  getPrayers = async () => {
+    return await this.request({
+      method: 'GET',
+      url: '/api/v1/prayer',
+    });
+  }
+  
   postPrayerRequest = async payload => {
     this.request({
       method: 'POST',
