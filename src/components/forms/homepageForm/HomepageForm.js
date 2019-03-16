@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+// COMPONENTS
+import PrayerBody from '../../formFields/prayerBody/prayerBody';
+
 import './form.scss';
 
 export default class Form extends Component {
@@ -16,8 +19,7 @@ export default class Form extends Component {
   render() {
     return(
       <form onSubmit={this.handleOnSubmit}>
-        <label htmlFor="prayerRequestMessage">Prayer Request</label>
-        <input onChange={this.handleOnChange} name="prayerRequestMessage" placeholder="Prayer Request"/>
+        <PrayerBody handleOnChange={this.handleOnChange}/>
       </form>
     );
   }
