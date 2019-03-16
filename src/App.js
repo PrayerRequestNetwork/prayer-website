@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
+// Services
+import PrayerRequestService from './services/prayerRequestService';
+
+// Components
+import Form from './components/form/form';
+
 import './App.css';
 
 class App extends Component {
+
+  handleOnSubmit = async formInfo => {
+    const {prayerRequestMessage} = formInfo;
+    const prs = new PrayerRequestService();
+    prs.postPrayerRequest({prayerBody: prayerRequestMessage});
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Form 
+        handleOnSubmit={this.handleOnSubmit}
+      />
     );
   }
 }
