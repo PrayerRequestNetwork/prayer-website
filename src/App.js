@@ -6,8 +6,9 @@ import PrayerRequestService from './services/prayerRequestService';
 // Components
 import Form from './components/forms/homepageForm/HomepageForm';
 import PrayerFeed from './components/prayerFeed/prayerFeed';
+import Header from './components/header/header';
 
-import './App.css';
+import './App.scss';
 
 class App extends Component {
 
@@ -19,13 +20,22 @@ class App extends Component {
   }
 
   render() {
+    /*
+      <main>
+      <header>
+        <h1> title</h1>
+        
+      </header>
+    
+    */
     return (
-      <React.Fragment>
-        <Form 
+      <main>
+        <Header />
+        <Form
           handleOnSubmit={this.handleOnSubmit}
         />
         <PrayerFeed />
-      </React.Fragment>
+      </main>
     );
   }
 }
