@@ -1,6 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Anton|Oswald');
+@import url('https://fonts.googleapis.com/css?family=Anton|Montserrat|Open+Sans:300|Oswald|Roboto');
 
-$titleFontFamily: 'Oswald', sans-serif;
+// FONTS
+$oswaldFontFamily: 'Oswald', sans-serif;
+$robotoFontFamily: 'Roboto', sans-serif;
+$montserratFontFamily: 'Montserrat', sans-serif;
+$openSansFontFamily: 'Open Sans', sans-serif;
+
+// BORDERS 
 $thinWhiteBorder: solid 1px rgba(255,255,255,.5);
 
 %dropCap {

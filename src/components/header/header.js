@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+// Components
+import NavBar from '../navBar/navBar';
+
 // Assets
 import headerBackground from '../../assets/edwin-andrade-158050-unsplash.jpg';
 
@@ -11,7 +14,9 @@ export default class Header extends Component {
     return (
       <header style={{ backgroundImage: `url(${headerBackground})`}}>
         <h1>
-          <span className="dropCap">P</span>rayer <span className="dropCap">R</span>equest <span className="dropCap">N</span>etwork</h1>
+          <span className="dropCap">P</span>rayer <span className="dropCap">R</span>equest <span className="dropCap">N</span>etwork
+        </h1>
+        <NavBar />
       </header>
     );
   }

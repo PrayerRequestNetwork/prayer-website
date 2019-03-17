@@ -1,0 +1,35 @@
+@import '../../styles/_variables.scss';
+
+nav {
+  font-family: $openSansFontFamily;
+  z-index: 1;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+
+    li {
+      border-right: $thinWhiteBorder;
+      color: white;
+      display: inline-block;
+      padding: 0 .8em;
+
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        color: rgba(255,255,255,.8);
+        cursor: pointer;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+}
