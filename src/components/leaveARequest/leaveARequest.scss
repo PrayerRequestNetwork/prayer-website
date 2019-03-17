@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+section.leaveARequest {
+  @extend %homeSection;
+
+  background: black;
+  flex-direction: row;
+
+  h2 {
+    @extend %sectionHeadingBorderRight;
+
+    flex: 1;
+  }
+  form {
+    flex: 3;
+  }
+}

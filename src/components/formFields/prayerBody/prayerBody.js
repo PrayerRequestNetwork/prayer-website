@@ -5,7 +5,7 @@ export default class PrayerBody extends Component {
     return(
       <React.Fragment>
         <label htmlFor="prayerRequestMessage">Prayer Request</label>
-        <input onChange={this.props.handleOnChange} name="prayerRequestMessage" placeholder="Prayer Request" />
+        <textarea onChange={this.props.handleOnChange} name="prayerRequestMessage" placeholder="Prayer Request" />
       </React.Fragment>
     );
   }
