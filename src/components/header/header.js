@@ -12,11 +12,11 @@ import './header.scss';
 export default class Header extends Component {
   render() {
     return (
-      <header style={{ backgroundImage: `url(${headerBackground})`}}>
+      <header id="home" style={{ backgroundImage: `url(${headerBackground})`}}>
+        <NavBar />
         <h1>
           <span className="dropCap">P</span>rayer <span className="dropCap">R</span>equest <span className="dropCap">N</span>etwork
         </h1>
-        <NavBar />
       </header>
     );
   }

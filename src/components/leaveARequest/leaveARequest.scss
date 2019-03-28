@@ -3,15 +3,23 @@
 section.leaveARequest {
   @extend %homeSection;
 
-  background: black;
-  flex-direction: row;
+  background: #eaeaea;
+  flex-direction: column;
 
-  h2 {
-    @extend %sectionHeadingBorderRight;
-
+  div {
+    display: flex;
     flex: 1;
+
+    h2 {
+      font-family: $oswaldFontFamily;
+      margin: auto;
+      word-spacing: initial;
+    }
   }
+
   form {
     flex: 3;
+    margin: auto;
+    width: 45%;
   }
 }

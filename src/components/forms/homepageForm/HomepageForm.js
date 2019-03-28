@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 // COMPONENTS
 import PrayerBody from '../../formFields/prayerBody/prayerBody';
 
-import './form.scss';
+import './homepageForm.scss';
 
 export default class Form extends Component {
   state = {

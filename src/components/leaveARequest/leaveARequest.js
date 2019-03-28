@@ -7,6 +7,10 @@ import PrayerRequestService from '../../services/prayerRequestService';
 import Form from '../forms/homepageForm/HomepageForm';
 import PrayerFeed from '../prayerFeed/prayerFeed';
 
+// Assets
+import leaveARequestBackground from '../../assets/milada-vigerova-36934-unsplash.jpg';
+import headerBackground from '../../assets/edwin-andrade-158050-unsplash.jpg';
+
 import './leaveARequest.scss';
 
 export default class LeaveARequest extends Component {
@@ -20,8 +24,10 @@ export default class LeaveARequest extends Component {
 
   render() {
     return(
-      <section className="leaveARequest">
-        <h2>Leave a Request</h2>
+      <section id="leaveARequest" className="leaveARequest">
+        <div>
+          <h2>Leave a Request</h2>
+        </div>
         <Form
           handleOnSubmit={this.handleOnSubmit}
         />
