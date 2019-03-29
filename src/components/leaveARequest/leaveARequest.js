@@ -18,8 +18,11 @@ export default class LeaveARequest extends Component {
   handleOnSubmit = async formInfo => {
     const { prayerRequestMessage } = formInfo;
     console.log({ prayerRequestMessage });
-    const prs = new PrayerRequestService();
-    prs.postPrayerRequest({ prayerBody: prayerRequestMessage });
+    if (prayerRequestMessage && prayerRequestMessage.length) {
+      const prs = new PrayerRequestService();
+      prs.postPrayerRequest({ prayerBody: prayerRequestMessage });
+
+    }
   }
 
   render() {

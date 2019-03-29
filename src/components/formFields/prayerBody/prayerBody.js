@@ -25,6 +25,7 @@ export default class PrayerBody extends Component {
           name="prayerRequestMessage" 
           placeholder={this.state.placeholder} 
         />
+        <button type="submit">Submit</button>
       </React.Fragment>
     );
   }
