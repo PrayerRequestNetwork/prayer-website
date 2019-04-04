@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+header {
+  @extend %homeSection;
+
+  background-attachment: fixed;
+  background-size: cover;
+  flex-direction: column;
+  
+  h1 {
+    @extend %sectionHeadingBorderLeft;
+
+    span.dropCap {
+      @extend %dropCap;
+    }
+  }
+
+  &:before {
+    content: '';
+    background: rgba(22,25,37, 0.4);
+    height: 100vh;
+    position: absolute;
+    width: 100vw;
+    z-index: 1;
+  }
+}

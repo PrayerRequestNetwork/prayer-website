@@ -8,7 +8,11 @@ export default class PrayerFeed extends Component {
   state = {
     prayers: [],
   }
-
+  componentDidMount = () => {
+    const prayers = this.state.prayers;
+    if (!(prayers && prayers.length)) { this.fetchPrayers(); }
+  }
+  
   fetchPrayers = async () => {
     const prs = new PrayerRequestService();
     let prayers; 
@@ -25,7 +29,6 @@ export default class PrayerFeed extends Component {
 
   render () {
     const prayers = this.state.prayers;
-    if (!(prayers && prayers.length)) { this.fetchPrayers(); }
     return(
       prayers && prayers.length ? 
         prayers.map(prayer => (

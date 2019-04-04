@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+
+section.leaveARequest {
+  @extend %homeSection;
+
+  background: #eaeaea;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    flex: 1;
+
+    h2 {
+      color:rgb(22,25,37);
+      font-family: $oswaldFontFamily;
+      margin: auto;
+      word-spacing: initial;
+    }
+  }
+
+  form {
+    flex: 3;
+    margin: auto;
+    text-align: right;
+    width: 45%;
+  }
+}
