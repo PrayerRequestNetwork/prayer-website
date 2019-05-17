@@ -5,8 +5,9 @@
   "dependencies": {
     "node-sass": "^4.11.0",
     "react": "^16.8.2",
-    "react-dom": "^16.8.2",
+    "react-dom": "^16.8.6",
     "react-scripts": "2.1.5",
+    "react-simple-maps": "^0.12.1",
     "superagent": "^4.1.0"
   },
   "scripts": {
