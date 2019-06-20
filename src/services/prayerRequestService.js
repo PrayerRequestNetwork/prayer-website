@@ -15,13 +15,20 @@ export default class PrayerRequestService {
       url: '/api/v1/prayer',
     });
   }
+
+  delay(t, v) {
+    return new Promise(function (resolve) {
+      setTimeout(resolve.bind(null, v), t);
+    });
+  }
   
   postPrayerRequest = async payload => {
-    this.request({
-      method: 'POST',
-      url: '/api/v1/prayer',
-      payload,
-    });
+    return this.delay(3000, 'success');
+    // return await this.request({
+    //   method: 'POST',
+    //   url: '/api/v1/prayer',
+    //   payload,
+    // });
   }
 
   request = async ({method, url, payload}) => {

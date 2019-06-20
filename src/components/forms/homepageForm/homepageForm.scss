@@ -1,37 +1,63 @@
 @import '../../../styles/variables';
 
-label {
-  display: block;
-  text-align: center;
-}
-textarea {
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 0px 7px -2px rgba(47,47,47, 0.3);
-  display: block;
-  font-family: $openSansFontFamily;
-  font-size: 1.1em;
-  height: 50%;
-  margin: auto;
-  outline: none;
-  padding: 1em;
-  text-align: center;
-  width: 100%;
+form {
+  height: 100%;
+  max-height: 500px;
+  min-height: 300px;
 
-  &:focus {
-    border: solid 1px rgba(47, 47, 47, 0.3);
+  label {
+    display: block;
+    text-align: center;
   }
-}
+  textarea {
+    background: $offWhite;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px -2px rgba(47,47,47, 0.3);
+    display: block;
+    font-family: $openSansFontFamily;
+    font-size: 1.1em;
+    height: 80%;
+    margin: auto;
+    outline: none;
+    padding: 1em;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  
+    &:focus {
+      border: solid 1px rgba(47, 47, 47, 0.3);
+    }
 
-button {
-  border: none;
-  border-radius: 3px;
-  margin: 1em 0;
-  padding: .8em;
-  transition: all .3s ease;
-
-  &:hover {
-    background: rgb(22,25,37);
-    color: white;
+    &.loading {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 10;
+      }
+    }
+  }
+  
+  button {
+    background: $offWhite;
+    border: none;
+    border-radius: 3px;
+    float: right;
+    font-family: $openSansFontFamily;
+    font-size: .8em;
+    margin: 1em 0;
+    padding: .8em;
+    transition: all .3s ease;
+  
+    &:hover, &:focus {
+      background: #bfbdbc;
+      color: white;
+      cursor: pointer;
+    }
   }
 }

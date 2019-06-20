@@ -5,9 +5,11 @@ export default class PrayerBody extends Component {
   state = {
     placeholder: 'Leave Your Request Here...',
   }
+
   onFocus = () => {
     this.setState({placeholder: ''});
   }
+
   onBlur = e => {
     let txt = e.target.value;
     if (!txt) {
@@ -19,13 +21,14 @@ export default class PrayerBody extends Component {
     return(
       <React.Fragment>
         <textarea 
+          className="loading"
           onBlur={this.onBlur}
           onFocus={this.onFocus} 
           onChange={this.props.handleOnChange} 
           name="prayerRequestMessage" 
           placeholder={this.state.placeholder} 
         />
-        <button type="submit">Submit</button>
+        <button type="submit" disabled={this.props.submitDisabled}>Submit</button>
       </React.Fragment>
     );
   }

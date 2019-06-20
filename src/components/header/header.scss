@@ -6,10 +6,11 @@ header {
   background-attachment: fixed;
   background-size: cover;
   flex-direction: column;
+
   
   h1 {
-    @extend %sectionHeadingBorderLeft;
-
+    @extend %sectionHeading;
+    border-bottom: $thinWhiteBorder;
     span.dropCap {
       @extend %dropCap;
     }
@@ -22,5 +23,13 @@ header {
     position: absolute;
     width: 100vw;
     z-index: 1;
+  }
+
+  section.content {
+    max-width: 1000px;
+    min-width: 300px;
+    margin: 2em auto;
+    width: 50%;
+    z-index: 2;
   }
 }

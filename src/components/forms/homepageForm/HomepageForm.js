@@ -10,16 +10,19 @@ export default class Form extends Component {
     prayerRequestMessage: '',
   }
   handleOnChange = e => {
-    this.setState(Object.assign({}, this.state, {[e.target.name]: e.target.value}));
+    this.setState({[e.target.name]: e.target.value});
   }
   handleOnSubmit = e => {
     e.preventDefault();
-    this.props.handleOnSubmit(Object.assign({}, this.state));
+    this.props.handleOnSubmit(this.state);
   }
   render() {
     return(
       <form onSubmit={this.handleOnSubmit}>
-        <PrayerBody handleOnChange={this.handleOnChange}/>
+        <PrayerBody 
+          handleOnChange={this.handleOnChange} 
+          submitDisabled={this.props.submitDisabled}
+        />
       </form>
     );
   }

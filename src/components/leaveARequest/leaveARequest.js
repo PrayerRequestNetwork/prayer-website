@@ -5,36 +5,56 @@ import PrayerRequestService from '../../services/prayerRequestService';
 
 // Components 
 import Form from '../forms/homepageForm/HomepageForm';
-import PrayerFeed from '../prayerFeed/prayerFeed';
-
-// Assets
-import leaveARequestBackground from '../../assets/milada-vigerova-36934-unsplash.jpg';
-import headerBackground from '../../assets/edwin-andrade-158050-unsplash.jpg';
+import LoadingSpinner from '../loadingSpinner/loadingSpinner';
 
 import './leaveARequest.scss';
 
 export default class LeaveARequest extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      posting: false,
+      postingSuccess: false,
+      postingFailure: false,
+    };
+  }
+
+  togglePosting = () => this.setState({posting: !this.state.posting});
+  togglePostingSuccess = () => this.setState({ postingSuccess: !this.state.postingSuccess });
+  togglePostingError = () => this.setState({ postingFailure: !this.state.postingFailure });
+
   handleOnSubmit = async formInfo => {
     const { prayerRequestMessage } = formInfo;
-    console.log({ prayerRequestMessage });
     if (prayerRequestMessage && prayerRequestMessage.length) {
       const prs = new PrayerRequestService();
-      prs.postPrayerRequest({ prayerBody: prayerRequestMessage });
+      this.togglePosting();
+      const result = await prs.postPrayerRequest({ prayerBody: prayerRequestMessage });
+      if (result === 'error') {
+        this.togglePostingError();
+      } else {
+        this.togglePostingSuccess();
 
+      }
     }
   }
 
   render() {
     return(
-      <section id="leaveARequest" className="leaveARequest">
-        <div>
-          <h2>Leave a Request</h2>
-        </div>
+      <div id="leaveARequest" className="leaveARequest">
         <Form
           handleOnSubmit={this.handleOnSubmit}
+          submitDisabled={this.state.posting}
         />
-      </section>
+        {
+          this.state.posting &&
+            <LoadingSpinner 
+              show={this.state.posting}
+              success={this.state.postingSuccess}
+              error={this.state.postingFailure}
+            />
+        }
+      </div>
     );
   }
 }
