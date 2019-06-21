@@ -23,12 +23,11 @@ export default class PrayerRequestService {
   }
   
   postPrayerRequest = async payload => {
-    return this.delay(3000, 'success');
-    // return await this.request({
-    //   method: 'POST',
-    //   url: '/api/v1/prayer',
-    //   payload,
-    // });
+    return await this.request({
+      method: 'POST',
+      url: '/api/v1/prayer',
+      payload,
+    });
   }
 
   request = async ({method, url, payload}) => {
