@@ -29,13 +29,14 @@ export default class LeaveARequest extends Component {
     if (prayerRequestMessage && prayerRequestMessage.length) {
       const prs = new PrayerRequestService();
       this.togglePosting();
-      const result = await prs.postPrayerRequest({ prayerBody: prayerRequestMessage });
-      if (result === 'error') {
-        this.togglePostingError();
-      } else {
+      let result;
+      try {
+        result = await prs.postPrayerRequest({ prayerBody: prayerRequestMessage });
         this.togglePostingSuccess();
-
+      } catch (e) {
+        this.togglePostingError();
       }
+      return result;
     }
   }
 
