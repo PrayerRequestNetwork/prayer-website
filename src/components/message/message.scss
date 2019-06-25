@@ -1,0 +1,39 @@
+@import '../../styles/_variables.scss';
+@import '../../styles/_animation.scss';
+
+section {
+  &.message-block {
+    display: flex;
+    height: 100%;
+    left: 0;
+    padding: 2em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    animation: fly-in-from-bottom .3s ease;
+
+    .content {
+      align-items: center;
+      background: white;
+      border-radius: $defaultBorderRadius;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      min-width: 60%;
+      padding: 1em;
+      overflow-y: scroll;
+      text-align: center;
+
+      div {
+        flex: 1;
+      }
+      button {
+        @extend %base-button-styling;
+
+        float: none;
+        width: 15%;
+      }
+    }
+  }  
+}

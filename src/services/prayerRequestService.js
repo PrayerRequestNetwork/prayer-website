@@ -1,4 +1,5 @@
 import superagent from 'superagent';
+import delay from '../utils/delay';
 
 export default class PrayerRequestService {
 
@@ -16,12 +17,6 @@ export default class PrayerRequestService {
     });
   }
 
-  delay(t, v) {
-    return new Promise(function (resolve) {
-      setTimeout(resolve.bind(null, v), t);
-    });
-  }
-  
   postPrayerRequest = async payload => {
     return await this.request({
       method: 'POST',

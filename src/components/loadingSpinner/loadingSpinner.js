@@ -14,7 +14,7 @@ export default function LoadingSpinner(props) {
     display: props.error ? 'block' : 'none',
   };
 
-  return(
+  return (
     <div className="spinner-container">
       <div className="circle-loader-container">
         {/*toggle "load-complete" to stop spinner */}

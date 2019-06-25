@@ -8,6 +8,7 @@ $openSansFontFamily: 'Open Sans', sans-serif;
 
 // BORDERS 
 $thinWhiteBorder: solid 1px rgba(255,255,255,.5);
+$defaultBorderRadius: 5px;
 
 // BACKGROUNDS
 $offWhite: rgb(247, 247, 247);
@@ -42,4 +43,17 @@ $offWhite: rgb(247, 247, 247);
   border-right: $thinWhiteBorder;
   padding-right: 1%;
   text-align: right;
+}
+
+%base-button-styling {
+  background: #f7f7f7;
+  border: none;
+  border-radius: 3px;
+  float: right;
+  font-family: "Open Sans", sans-serif;
+  font-size: .8em;
+  margin: 1em 0;
+  padding: .8em;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
