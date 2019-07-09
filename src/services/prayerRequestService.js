@@ -1,5 +1,4 @@
 import superagent from 'superagent';
-import delay from '../utils/delay';
 
 export default class PrayerRequestService {
 
