@@ -2,15 +2,12 @@ import React, {Component} from 'react';
 
 // Services
 import PrayerRequestService from '../../services/prayerRequestService';
+import copy from '../../copy/copy';
 
 // Components 
 import Form from '../forms/homepageForm/HomepageForm';
 import LoadingSpinner from '../loadingSpinner/loadingSpinner';
 import Message from '../message/message';
-
-// Utils 
-import delay from '../../utils/delay';
-import copy from '../../copy/copy';
 
 // Styles
 import './leaveARequest.scss';
@@ -48,17 +45,15 @@ export default class LeaveARequest extends Component {
     if (prayerRequestMessage && prayerRequestMessage.length) {
       const prs = new PrayerRequestService();
       this.togglePosting();
-      let result;
       try {
-        result = await prs.postPrayerRequest({ prayerBody: prayerRequestMessage });
+        const result = await prs.postPrayerRequest({ prayerBody: prayerRequestMessage });
         if (result === 'error') { throw new Error(); }
         this.togglePostingSuccess();
-        delay(1000, null, this.toggleDisplayMessage);
+        this.toggleDisplayMessage();
       } catch (e) {
         this.togglePostingFailure();
-        delay(1000, null, this.toggleDisplayMessage);
+        this.toggleDisplayMessage();
       }
-      return result;
     }
   }
 
