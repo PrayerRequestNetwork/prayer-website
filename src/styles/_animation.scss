@@ -2,3 +2,8 @@
   from { top: 59%; }
   to { top: 0%; }
 }
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
