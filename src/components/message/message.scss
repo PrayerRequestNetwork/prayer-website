@@ -6,12 +6,15 @@ section {
     display: flex;
     height: 100%;
     left: 0;
+    opacity: 0;
     padding: 2em;
     position: absolute;
-    top: 0;
+    top: 59%;
     width: 100%;
 
-    animation: fly-in-from-bottom .3s ease;
+    animation: 
+      fly-in-from-bottom .3s ease .8s forwards,
+      fade-in .3s ease .8s forwards;
 
     .content {
       align-items: center;
