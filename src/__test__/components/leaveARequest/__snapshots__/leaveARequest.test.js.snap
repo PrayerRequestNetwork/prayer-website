@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LeaveARequest Handle Submit On Failure Should render message content with failure text 1`] = `
+"<Message showHandler={[Function]}>
+  <div>
+    <h4 className=\\"failure-title\\">
+      We did not recieve your request.
+    </h4>
+    <p className=\\"failure-body\\">
+      Something went wrong. Please try to submit again. If the problem continues, try refreshing the page and try again.
+    </p>
+  </div>
+</Message>"
+`;
+
+exports[`LeaveARequest Handle Submit On Success Should render message content with success text 1`] = `
+"<Message showHandler={[Function]}>
+  <div>
+    <h4 className=\\"success-title\\">
+      We have successfully received your prayer request.
+    </h4>
+    <p className=\\"success-body\\">
+      Our prayer team has been emailed and we will be praying for you. Although we do not know you, we know that our God knows you and each one of your concerns. We hope you will be blessed knowing that, along with Christ, there are others interceding on your behalf.
+    </p>
+  </div>
+</Message>"
+`;
+
+exports[`LeaveARequest Should Render LeaveARequest Component 1`] = `
+"<div id=\\"leaveARequest\\" className=\\"leaveARequest\\">
+  <Form handleOnSubmit={[Function]} submitDisabled={false} />
+</div>"
+`;
