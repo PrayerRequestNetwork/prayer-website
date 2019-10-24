@@ -9,6 +9,7 @@ form {
     display: block;
     text-align: center;
   }
+
   textarea {
     background: $offWhite;
     border: none;
@@ -47,6 +48,7 @@ form {
     background: $offWhite;
     border: none;
     border-radius: 3px;
+    clear: right;
     float: right;
     font-family: $openSansFontFamily;
     font-size: .8em;
@@ -59,5 +61,10 @@ form {
       color: white;
       cursor: pointer;
     }
+  }
+
+  div.g-recaptcha {
+    float: right;
+    margin-top: 1em;
   }
 }
