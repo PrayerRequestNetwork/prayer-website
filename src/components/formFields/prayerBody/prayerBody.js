@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ReCAPTCHA from '../../reCAPTCHA/reCAPTCHA';
 
 export default class PrayerBody extends Component {
 
@@ -28,6 +29,7 @@ export default class PrayerBody extends Component {
           name="prayerRequestMessage" 
           placeholder={this.state.placeholder} 
         />
+        <ReCAPTCHA />
         <button type="submit" disabled={this.props.submitDisabled}>Submit</button>
       </React.Fragment>
     );
