@@ -14,7 +14,12 @@ export default class Form extends Component {
   }
   handleOnSubmit = e => {
     e.preventDefault();
-    this.props.handleOnSubmit(this.state);
+    // To ensure reCAPTCHA is being used
+    // Using eslint-disable because create react app doesn't seem to work even though variable (grecaptcha) is defined globally
+    // eslint-disable-next-line no-undef
+    if (grecaptcha.getResponse()) {
+      this.props.handleOnSubmit(this.state);
+    }
   }
   render() {
     return(
